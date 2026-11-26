@@ -2,7 +2,7 @@ import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        message = os.getenv('APP_MESSAGE', 'AI App works!')
+        message = os.getenv('APP_MESSAGE', 'AI App works after GitHub Actions!')
         os.makedirs('/app/logs', exist_ok=True)
         with open('/app/logs/access.log', 'a') as log:
             log.write(self.path + '\n')
