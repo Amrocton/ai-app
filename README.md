@@ -7,3 +7,7 @@
 ## Jenkins CI
 
 The `ai-app-ci` pipeline polls the `main` branch every two minutes. It tests the application, builds a `ci-<BUILD_NUMBER>` image, and publishes it to Docker Hub.
+
+## Delivery
+
+The same Docker image is used in development, staging, and production. The APP_ENV variable selects the environment, and GET /health returns OK for deployment checks.
